@@ -1,19 +1,9 @@
-import { useCallback, useState } from "react";
+import { useToggleSelectionSet } from "./useToggleSelectionSet";
 
-export const TodoList = ({ items }) => {
-  const [selectionSet, setSelectionSet] = useState(() => new Set());
-  const handleChange = useCallback((item, isChecked) => {
-    setSelectionSet((prevSet) => {
-      const newSet = new Set(prevSet);
-      if (isChecked) {
-        newSet.add(item);
-      } else {
-        newSet.delete(item);
-      }
-      return newSet;
-    });
-  }, []);
-
+export const TodoList = ({ items, preSelections }) => {
+  const [selectionSet, toggleSelectionItem] = useToggleSelectionSet(
+    preSelections
+  );
   return (
     <ul>
       {items.map((item) => {
@@ -22,7 +12,9 @@ export const TodoList = ({ items }) => {
             <input
               data-testid={`${item}-checkbox`}
               checked={selectionSet.has(item)}
-              onChange={(event) => handleChange(item, event.target.checked)}
+              onChange={(event) =>
+                toggleSelectionItem(item, event.target.checked)
+              }
               type="checkbox"
             ></input>
             <span>{item}</span>
