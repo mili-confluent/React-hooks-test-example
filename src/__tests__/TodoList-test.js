@@ -9,16 +9,19 @@ describe("TodoList", () => {
     // Apple is pre selected
     expect(getByTestId("Apple-checkbox")).toHaveProperty("checked", true);
     expect(getByTestId("Banana-checkbox")).toHaveProperty("checked", false);
+
     rerender(
       <TodoList items={["Apple", "Banana", "Cat"]} preSelections={["Cat"]} />
     );
 
-    // check toogle click
-    fireEvent.click(getByTestId("Banana-checkbox"));
-    expect(getByTestId("Banana-checkbox")).toHaveProperty("checked", true);
-
     // Apple's selection is still there
     expect(getByTestId("Apple-checkbox")).toHaveProperty("checked", true);
     expect(getByTestId("Cat-checkbox")).toHaveProperty("checked", true);
+
+    // check toggle click
+    fireEvent.click(getByTestId("Banana-checkbox"));
+    expect(getByTestId("Banana-checkbox")).toHaveProperty("checked", true);
+    fireEvent.click(getByTestId("Banana-checkbox"));
+    expect(getByTestId("Banana-checkbox")).toHaveProperty("checked", false);
   });
 });
