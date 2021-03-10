@@ -1,7 +1,7 @@
 {
-  "name": "todolist-test",
+  "name": "react-hooks-test-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "Test React Hooks with Component\n\nTest React Hooks purely",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
