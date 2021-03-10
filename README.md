@@ -2,9 +2,9 @@
 
 Created with CodeSandbox
 
-[Test React Hooks with Component](https://codesandbox.io/s/silent-cloud-7m3sk?file=/src/__tests__/TodoList-test.js)
+[Test React Hooks with Component](https://codesandbox.io/s/react-hooks-test-example-7m3sk?file=/src/__tests__/TodoList-test.js)
 
-[Test Hooks purely](https://codesandbox.io/s/silent-cloud-7m3sk?file=/src/__tests__/useToggleSelectionSet-test.js)
+[Test Hooks purely](https://codesandbox.io/s/react-hooks-test-example-7m3sk?=/src/__tests__/useToggleSelectionSet-test.js)
 
 Test results in CodeSandbox
 <br>
