@@ -6,15 +6,19 @@ export default function App() {
   const [preSelections, setPreSelections] = useState(() => ["Apple"]);
   const [inputText, setInputText] = useState("");
   const handleAddUndoItemClick = useCallback(() => {
-    setItems((prevItems) => [...prevItems, inputText]);
-    setInputText("");
-  }, [inputText]);
+    if (inputText !== "" && items.includes(inputText)) {
+      setItems((prevItems) => [...prevItems, inputText]);
+      setInputText("");
+    }
+  }, [inputText, items]);
 
   const handleAddDoneItemClick = useCallback(() => {
-    setItems((prevItems) => [...prevItems, inputText]);
-    setPreSelections((prevPreSelections) => [inputText]);
-    setInputText("");
-  }, [inputText]);
+    if (inputText !== "" && items.includes(inputText)) {
+      setItems((prevItems) => [...prevItems, inputText]);
+      setPreSelections((prevPreSelections) => [inputText]);
+      setInputText("");
+    }
+  }, [inputText, items]);
 
   return (
     <div className="App">
