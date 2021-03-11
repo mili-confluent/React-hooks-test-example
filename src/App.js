@@ -24,8 +24,8 @@ export default function App() {
         value={inputText}
         onChange={(event) => setInputText(event.target.value)}
       />
-      <button onClick={handleAddUndoItemClick}>Add Undo item</button>
-      <button onClick={handleAddDoneItemClick}>Add Done item</button>
+      <button onClick={handleAddUndoItemClick}>Add a todo item</button>
+      <button onClick={handleAddDoneItemClick}>Add a done item</button>
     </div>
   );
 }
