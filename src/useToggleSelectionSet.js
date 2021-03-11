@@ -4,6 +4,7 @@ export function useToggleSelectionSet(preSelections) {
   const [selectionSet, setSelectionSet] = useState(
     () => new Set(preSelections)
   );
+  // toggle an item between selected and unselected
   const toggleSelectionItem = useCallback((item, isChecked) => {
     setSelectionSet((prevSet) => {
       const newSet = new Set(prevSet);
@@ -16,6 +17,7 @@ export function useToggleSelectionSet(preSelections) {
     });
   }, []);
 
+  // keep the old selections and appending new preSelections
   useEffect(() => {
     setSelectionSet((prevSelectionSet) => {
       const newSelections = preSelections.filter(
